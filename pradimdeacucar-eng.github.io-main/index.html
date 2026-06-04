@@ -1,0 +1,44 @@
+// Função que o seu ecrã vai rodar na nuvem ou localmente no navegador
+async function carregarEAuditarDados() {
+    try {
+        // 1. Puxa o texto leve que o robô extraiu dos Diários Oficiais (Sem salvar PDFs no seu HD)
+        const respostaDados = await fetch(`dados.json?nocache=${Date.now()}`);
+        const dadosDoDiario = await respostaDados.json();
+
+        // 2. Puxa a sua Matriz Jurídica com as regras do TCM/BA, STF e Leis Federais
+        const respostaCompliance = await fetch(`gabarito_compliance.json?nocache=${Date.now()}`);
+        const gabaritoCompliance = await respostaCompliance.json();
+
+        console.log("🧠 Agente Veritas: Dados e Matriz Jurídica carregados com sucesso.");
+        
+        // Aqui o Agente começa o cruzamento eletrônico
+        processarAuditoriaCognitiva(dadosDoDiario, gabaritoCompliance);
+
+    } catch (erro) {
+        console.error("⚠️ Erro ao carregar os arquivos de dados na nuvem:", erro);
+        alert("Erro de leitura: Verifique se o dados.json e o gabarito_compliance.json estão na mesma pasta.");
+    }
+}
+
+function processarAuditoriaCognitiva(diario, gabarito) {
+    // O Agente pega as chaves da Prefeitura e da Câmara de forma unificada
+    const escopos = ["PREFEITURA", "CAMARA_VEREADORES"];
+    
+    escopos.forEach(orgao => {
+        if (!gabarito[orgao]) return;
+
+        // Varre as subpastas temáticas (Saúde, Educação, Logística) do seu manual de conformidade
+        for (const [tema, regras] of Object.entries(gabarito[orgao])) {
+            
+            // O Agente busca se alguma palavra-chave da lei aparece nos textos extraídos do dados.json
+            regras.palavras_chave.forEach(chave => {
+                
+                // Procurando o termo correspondente no lote do Diário Oficial
+                if (diario[tema] && diario[tema].some(linha => linha.toLowerCase().includes(chave))) {
+                    console.log(`🎯 Inconformidade em potencial detectada em ${orgao} -> Tema: ${tema}`);
+                    // Aqui o sistema monta o laudo citando a base_legal e o plano_de_acao do seu gabarito
+                }
+            });
+        }
+    });
+}

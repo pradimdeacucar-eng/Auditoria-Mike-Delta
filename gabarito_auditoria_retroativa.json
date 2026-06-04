@@ -1,0 +1,145 @@
+{
+  "auditoria_retroativa": {
+    "financeira": {
+      "descricao": "Análise de perdas financeiras históricas",
+      "categorias": [
+        {
+          "id": "RETRO-FIN-001",
+          "nome": "Valores Não Arrecadados",
+          "descricao": "Receitas que deixaram de ser auferidas",
+          "tipo": "receita",
+          "exemplos": [
+            "Impostos não cobrados",
+            "Multas prescritas",
+            "Aluguéis de imóvel público não recebidos",
+            "Taxas administrativas não lançadas"
+          ]
+        },
+        {
+          "id": "RETRO-FIN-002",
+          "nome": "Despesas Indevidas",
+          "descricao": "Gastos sem justificativa adequada",
+          "tipo": "despesa",
+          "exemplos": [
+            "Empenhos sem licitação",
+            "Pagamentos duplicados",
+            "Despesas fora de competência",
+            "Contratações sem processo"
+          ]
+        },
+        {
+          "id": "RETRO-FIN-003",
+          "nome": "Desvio de Recursos",
+          "descricao": "Recursos destinados a finalidade diferente",
+          "tipo": "desvio",
+          "exemplos": [
+            "Programa social usado como campanha",
+            "Recurso de educação em publicidade",
+            "Fundo de saúde desviado"
+          ]
+        }
+      ]
+    },
+    "patrimonial": {
+      "descricao": "Análise de perdas patrimoniais e imobiliárias",
+      "categorias": [
+        {
+          "id": "RETRO-PAT-001",
+          "nome": "Terrenos Não Utilizados",
+          "descricao": "Áreas que permaneceram ociosas",
+          "unidade": "m²",
+          "metrica": "area_total - area_utilizada",
+          "exemplos": [
+            "Lotes em loteamento não ocupados",
+            "Terrenos adquiridos para projeto cancelado",
+            "Áreas de preservação sem manutenção",
+            "Terrenos em herança bloqueada"
+          ]
+        },
+        {
+          "id": "RETRO-PAT-002",
+          "nome": "Desvio de Finalidade",
+          "descricao": "Imóvel usado para finalidade diferente da planejada",
+          "unidade": "m² / evento",
+          "exemplos": [
+            "Terreno para saúde usado como estacionamento",
+            "Área verde ocupada por comércio",
+            "Equipamento público alugado para privado"
+          ]
+        },
+        {
+          "id": "RETRO-PAT-003",
+          "nome": "Doação Irregular",
+          "descricao": "Terras doadas sem critério ou transparência",
+          "unidade": "m² / doações",
+          "exemplos": [
+            "Doação a entidade sem CNPJ",
+            "Doação sem edital público",
+            "Doação para parente ou político",
+            "Doação fora do interesse público"
+          ]
+        },
+        {
+          "id": "RETRO-PAT-004",
+          "nome": "Pagamento em Terras",
+          "descricao": "Dação em pagamento com irregularidades",
+          "unidade": "m² / transações",
+          "exemplos": [
+            "Terreno dado sem avaliação prévia",
+            "Valor abaixo do mercado",
+            "Dação para quitação de dívida questionável"
+          ]
+        },
+        {
+          "id": "RETRO-PAT-005",
+          "nome": "Loteamento no Limbo",
+          "descricao": "Divisão de terras inconclusas ou irregular",
+          "unidade": "lotes / m²",
+          "exemplos": [
+            "Lotes não titulados",
+            "Loteamento sem infraestrutura",
+            "Lotes ocupados informalmente",
+            "Divisão sem registro"
+          ]
+        },
+        {
+          "id": "RETRO-PAT-006",
+          "nome": "Projeto Incompleto",
+          "descricao": "Construção planejada X realizada menor",
+          "unidade": "m² / %",
+          "exemplos": [
+            "Projeto 10.000m² mas construiu 7.000m²",
+            "Etapas não concluídas de MCMV",
+            "Habitação social com déficit",
+            "Infraestrutura não finalizada"
+          ]
+        },
+        {
+          "id": "RETRO-PAT-007",
+          "nome": "Ocupação Irregular",
+          "descricao": "Terras ocupadas sem autorização formal",
+          "unidade": "m² / ocupações",
+          "exemplos": [
+            "Invasão tolerada",
+            "Construção em área pública",
+            "Ocupação de REURB com pendências"
+          ]
+        }
+      ]
+    }
+  },
+  "metricas": {
+    "calcular_perda_total": "sum(valor_nao_arrecadado) + (area_ociosa * valor_m2)",
+    "calcular_percentual": "(perda_total / receita_esperada) * 100",
+    "calcular_area_aproveitamento": "(area_utilizada / area_total) * 100",
+    "calcular_desvio": "(area_desviada / area_total) * 100",
+    "calcular_recuperacao": "area_recuperavel * valor_m2 + valores_recuperaveis"
+  },
+  "ferramentas_analise": {
+    "cross_reference": "Cruzar dados com DOEM, cadastro imobiliário, projetos",
+    "series_temporal": "Análise ao longo do tempo",
+    "georeferenciamento": "Mapear terrenos e ocupações",
+    "comparacao_planejado": "Comparar projeto vs realizado",
+    "calculo_prejuizo": "Estimar valor total de perdas"
+  }
+}

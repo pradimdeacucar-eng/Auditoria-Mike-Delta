@@ -1,0 +1,28 @@
+{
+  "terminal.integrated.cwd": "/mnt/d/PREFEITURA_PRADO_BA",
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "/bin/bash",
+      "args": ["-l"],
+      "icon": "terminal-bash"
+    },
+    "python": {
+      "path": "/usr/bin/python3",
+      "args": [],
+      "icon": "terminal-bash"
+    }
+  },
+  "python.defaultInterpreterPath": "/usr/bin/python3",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.git": false
+  }
+}

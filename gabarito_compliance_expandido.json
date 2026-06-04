@@ -1,0 +1,204 @@
+{
+  "conformidade": {
+    "administrativa": {
+      "regras": [
+        {
+          "id": "ADM-001",
+          "nome": "Publicação de Atos Administrativos",
+          "descricao": "Todo ato administrativo deve ser publicado no DOEM",
+          "severidade": "alta",
+          "criterio": "atos_publicados > 0"
+        },
+        {
+          "id": "ADM-002",
+          "nome": "Padrão de Nomenclatura",
+          "descricao": "Atos devem seguir nomenclatura oficial",
+          "severidade": "média",
+          "criterio": "nomenclatura_padrao"
+        },
+        {
+          "id": "ADM-003",
+          "nome": "Assinatura Digital",
+          "descricao": "Documentos devem ter assinatura digital verificável",
+          "severidade": "alta",
+          "criterio": "assinatura_digital_valida"
+        }
+      ],
+      "proposta_correcao": "Revisar publicação no DOEM e padronizar nomenclatura de atos"
+    },
+    "juridica": {
+      "regras": [
+        {
+          "id": "JUR-001",
+          "nome": "Conformidade com Legislação Federal",
+          "descricao": "Atos devem estar em conformidade com leis federais",
+          "severidade": "alta",
+          "criterio": "conforme_lei_federal"
+        },
+        {
+          "id": "JUR-002",
+          "nome": "Conformidade com Legislação Estadual",
+          "descricao": "Atos devem estar em conformidade com leis estaduais",
+          "severidade": "alta",
+          "criterio": "conforme_lei_estadual"
+        },
+        {
+          "id": "JUR-003",
+          "nome": "Fundamentação Legal",
+          "descricao": "Todo ato deve citar fundamentação legal adequada",
+          "severidade": "média",
+          "criterio": "fundamentacao_legal_presente"
+        }
+      ],
+      "proposta_correcao": "Revisar fundamentação legal e adequar ato à legislação aplicável"
+    },
+    "legislativa": {
+      "regras": [
+        {
+          "id": "LEG-001",
+          "nome": "Processo Legislativo",
+          "descricao": "Leis devem seguir processo legislativo correto",
+          "severidade": "alta",
+          "criterio": "processo_legislativo_correto"
+        },
+        {
+          "id": "LEG-002",
+          "nome": "Consulta Pública",
+          "descricao": "Projetos de lei devem ter consulta pública (se aplicável)",
+          "severidade": "média",
+          "criterio": "consulta_publica_realizada"
+        },
+        {
+          "id": "LEG-003",
+          "nome": "Sanção do Executivo",
+          "descricao": "Lei deve ser sancionada pelo Prefeito",
+          "severidade": "alta",
+          "criterio": "sancionada_prefeito"
+        }
+      ],
+      "proposta_correcao": "Adequar processo legislativo e obter sanção necessária"
+    },
+    "financeira": {
+      "regras": [
+        {
+          "id": "FIN-001",
+          "nome": "Lei de Responsabilidade Fiscal",
+          "descricao": "Gastos devem estar em conformidade com LRF",
+          "severidade": "alta",
+          "criterio": "conforme_lrf"
+        },
+        {
+          "id": "FIN-002",
+          "nome": "Disponibilidade Orçamentária",
+          "descricao": "Empenho deve ter cobertura orçamentária",
+          "severidade": "alta",
+          "criterio": "cobertura_orcamentaria"
+        },
+        {
+          "id": "FIN-003",
+          "nome": "Limite de Despesa",
+          "descricao": "Despesa não pode exceder limite de 2% do RCL para seguro",
+          "severidade": "alta",
+          "criterio": "dentro_limite_despesa"
+        },
+        {
+          "id": "FIN-004",
+          "nome": "Publicação de Despesas",
+          "descricao": "Despesas devem ser publicadas no DOEM",
+          "severidade": "média",
+          "criterio": "despesas_publicadas"
+        },
+        {
+          "id": "FIN-005",
+          "nome": "Transparência Fiscal",
+          "descricao": "Divulgação de despesas deve ser clara e acessível",
+          "severidade": "média",
+          "criterio": "transparencia_fiscal"
+        }
+      ],
+      "proposta_correcao": "Adequar despesa à legislação fiscal e garantir transparência"
+    },
+    "politica": {
+      "regras": [
+        {
+          "id": "POL-001",
+          "nome": "Proibição de Nepotismo",
+          "descricao": "Proibido contratar parentes até 3º grau",
+          "severidade": "alta",
+          "criterio": "sem_nepotismo"
+        },
+        {
+          "id": "POL-002",
+          "nome": "Conflito de Interesse",
+          "descricao": "Não permitir decisões com conflito de interesse",
+          "severidade": "alta",
+          "criterio": "sem_conflito_interesse"
+        },
+        {
+          "id": "POL-003",
+          "nome": "Equilíbrio Político",
+          "descricao": "Distribuição equilibrada de cargos entre partidos",
+          "severidade": "baixa",
+          "criterio": "equilibrio_politico"
+        }
+      ],
+      "proposta_correcao": "Revisar nomeações e garantir conformidade com lei de nepotismo"
+    },
+    "social": {
+      "regras": [
+        {
+          "id": "SOC-001",
+          "nome": "Políticas Públicas Sociais",
+          "descricao": "Deve existir planejamento de políticas sociais",
+          "severidade": "média",
+          "criterio": "politicas_sociais_planejadas"
+        },
+        {
+          "id": "SOC-002",
+          "nome": "Acesso à Informação",
+          "descricao": "Informações públicas devem ser acessíveis",
+          "severidade": "média",
+          "criterio": "acesso_informacao"
+        },
+        {
+          "id": "SOC-003",
+          "nome": "Participação Cidadã",
+          "descricao": "Deve haver mecanismos de participação cidadã",
+          "severidade": "baixa",
+          "criterio": "participacao_cidada"
+        },
+        {
+          "id": "SOC-004",
+          "nome": "Igualdade e Inclusão",
+          "descricao": "Políticas devem promover inclusão social",
+          "severidade": "média",
+          "criterio": "politicas_inclusao"
+        }
+      ],
+      "proposta_correcao": "Implementar ou fortalecer políticas sociais e de inclusão"
+    }
+  },
+  "niveis_severidade": {
+    "alta": 3,
+    "média": 2,
+    "baixa": 1
+  },
+  "pontuacao": {
+    "excelente": {
+      "minimo": 90,
+      "descricao": "Excelente conformidade"
+    },
+    "bom": {
+      "minimo": 70,
+      "descricao": "Boa conformidade com ajustes menores"
+    },
+    "regular": {
+      "minimo": 50,
+      "descricao": "Conformidade regular com problemas identificados"
+    },
+    "critico": {
+      "minimo": 0,
+      "descricao": "Conformidade crítica com muitos problemas"
+    }
+  }
+}
